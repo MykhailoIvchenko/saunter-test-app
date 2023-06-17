@@ -1,26 +1,46 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, useState} from 'react';
+import Header from "./components/Header";
+import RoutesPage from "./pages/RoutesPage";
+import ModalAddPath from "./components/ModalAddPath";
+import { mapsService } from "./services/mapsServices";
+import './styles/styles.scss';
 
-function App() {
+const App: React.FC = () => {
+  //#region Google maps API
+  useEffect(() => {
+    const script = mapsService.loadScript();
+
+    return () => {
+      if (script) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
+  //#endregion
+
+  //#region Modal add route
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  //#endregion
+
+  //#region Render
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Header
+        addClasses={'App-Header'}
+        setIsModalVisible={setIsModalVisible}
+      />
+
+      <RoutesPage />
+
+      {isModalVisible &&
+        <ModalAddPath
+          isModalVisible={isModalVisible}
+          setIsModalVisible={setIsModalVisible}
+        />
+      }
     </div>
   );
+  //#endregion
 }
 
 export default App;

@@ -1,0 +1,42 @@
+//xs
+
+//sm
+@mixin onWideMobile {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+//md
+@mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+//lg
+@mixin onWideTablet {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+//xl
+@mixin onLaptop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+//xxl
+@mixin onDesktop {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin onLargeScreen {
+  @media (min-width: 2200px) {
+    @content;
+  }
+}

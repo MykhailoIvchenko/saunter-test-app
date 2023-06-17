@@ -1,0 +1,624 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  color: #808080;
+}
+
+.ant-list-item {
+  border-bottom: none !important;
+}
+
+.ant-modal-content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.ant-modal-header {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media (min-width: 992px) {
+  .ant-modal-header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.ant-input-wrapper {
+  height: 60px;
+}
+
+.ant-input-affix-wrapper {
+  height: 60px;
+}
+
+.ant-input-search-button {
+  height: 60px !important;
+  width: 60px !important;
+}
+
+.App {
+  min-height: 100vh;
+}
+@media (min-width: 992px) {
+  .App {
+    height: 100vh;
+    max-height: 100vh;
+  }
+}
+.App-Header {
+  margin-bottom: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+}
+@media (min-width: 992px) {
+  .App-Header {
+    margin-bottom: 10px;
+  }
+}
+
+.Header {
+  padding: 10px 20px;
+  height: 60px;
+  background-color: #ffffff;
+}
+@media (min-width: 768px) {
+  .Header {
+    padding: 10px 40px;
+    height: 80px;
+  }
+}
+@media (min-width: 1600px) {
+  .Header {
+    padding: 10px 60px;
+    height: 100px;
+  }
+}
+.Header-Content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #808080;
+  height: 100%;
+}
+@media (min-width: 2200px) {
+  .Header-Content {
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+}
+.Header-Left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Header-Logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+@media (min-width: 768px) {
+  .Header-Logo {
+    width: 34px;
+    height: 34px;
+  }
+}
+@media (min-width: 1600px) {
+  .Header-Logo {
+    margin-right: 20px;
+    width: 46px;
+    height: 46px;
+  }
+}
+.Header-AppName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+@media (min-width: 1600px) {
+  .Header-AppName {
+    font-size: 40px;
+  }
+}
+.Header-Button {
+  width: 100px;
+  height: 30px;
+  font-weight: 700;
+}
+@media (min-width: 992px) {
+  .Header-Button {
+    width: 140px;
+    height: 40px;
+  }
+}
+@media (min-width: 1600px) {
+  .Header-Button {
+    font-size: 16px;
+    width: 200px;
+    height: 50px;
+  }
+}
+
+.HomePage {
+  padding: 0 20px;
+}
+@media (min-width: 768px) {
+  .HomePage {
+    padding: 10px 40px;
+  }
+}
+@media (min-width: 1600px) {
+  .HomePage {
+    padding: 10px 60px;
+  }
+}
+@media (min-width: 992px) {
+  .HomePage-Content {
+    position: relative;
+  }
+}
+@media (min-width: 2200px) {
+  .HomePage-Content {
+    max-width: 2000px;
+    margin: 0 auto;
+  }
+}
+.HomePage-Divider {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.HomePage-Item {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .HomePage-Item {
+    height: calc(100vh - (110px));
+    max-height: calc(100vh - (110px));
+  }
+}
+@media (min-width: 1600px) {
+  .HomePage-Item {
+    height: calc(100vh - (140px));
+    max-height: calc(100vh - (140px));
+  }
+}
+@media (min-width: 992px) {
+  .HomePage-List {
+    padding-right: 20px;
+  }
+}
+.HomePage-SearchInput {
+  margin-bottom: 0;
+  height: 60px;
+}
+@media (min-width: 992px) {
+  .HomePage-SearchInput {
+    padding-right: 8px;
+  }
+}
+
+.RoutesList {
+  height: 100%;
+}
+@media (min-width: 992px) {
+  .RoutesList {
+    max-height: calc(100vh - (170px));
+    overflow-y: scroll;
+  }
+}
+@media (min-width: 1600px) {
+  .RoutesList {
+    max-height: calc(100vh - (210px));
+  }
+}
+
+@media (min-width: 992px) {
+  .RouteDetails {
+    max-height: calc(100vh - (110px));
+    overflow-y: scroll;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (min-width: 1600px) {
+  .RouteDetails {
+    max-height: calc(100vh - (140px));
+  }
+}
+.RouteDetails-Head {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(0, 0, 0, 0.8666666667);
+}
+@media (min-width: 992px) {
+  .RouteDetails-Head {
+    margin: 0 0 20px;
+    font-size: 20px;
+  }
+}
+.RouteDetails-Title {
+  margin: 0;
+}
+.RouteDetails-FullDescription {
+  margin-bottom: 10px;
+  text-align: justify;
+}
+@media (min-width: 992px) {
+  .RouteDetails-FullDescription {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+}
+.RouteDetails-LinksContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-bottom: 20px;
+  min-height: 40px;
+}
+@media (min-width: 992px) {
+  .RouteDetails-LinksContainer {
+    margin-bottom: 0;
+  }
+}
+.RouteDetails-Link {
+  padding-right: 0;
+}
+@media (min-width: 992px) {
+  .RouteDetails-Link {
+    font-size: 16px;
+  }
+}
+
+.DividerContainer {
+  display: none;
+}
+@media (min-width: 992px) {
+  .DividerContainer {
+    margin: 0 auto;
+    max-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.Divider-Vertical {
+  background-color: #808080;
+  height: 100%;
+  width: 2px;
+}
+.Divider-Horizontal {
+  background-color: #808080;
+  margin: 0;
+  height: 2px;
+}
+
+.EmptyRoute {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 50vh;
+}
+.EmptyRoute-Image {
+  width: 160px !important;
+  height: 160px !important;
+  margin-bottom: 20px;
+}
+.EmptyRoute-Text {
+  font-size: 20px;
+}
+
+.RouteCard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30px 1fr 70px 20px;
+  background-color: #dddddd;
+  height: 80px;
+  border-radius: 4px;
+  padding: 5px;
+  color: rgba(0, 0, 0, 0.8666666667);
+}
+@media (min-width: 576px) {
+  .RouteCard {
+    grid-template-columns: 40px 1fr 80px 20px;
+    height: 100px;
+    padding: 10px;
+  }
+}
+@media (min-width: 1200px) {
+  .RouteCard {
+    grid-template-columns: 50px 1fr 100px 30px;
+  }
+}
+@media (min-width: 1600px) {
+  .RouteCard {
+    grid-template-columns: 60px 1fr 100px 30px;
+  }
+}
+.RouteCard_Active {
+  background-color: #5555ff;
+  color: #ffffff;
+}
+.RouteCard:hover {
+  cursor: pointer;
+}
+.RouteCard-ImageBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+}
+@media (min-width: 1200px) {
+  .RouteCard-ImageBlock {
+    width: 40px;
+  }
+}
+@media (min-width: 1600px) {
+  .RouteCard-ImageBlock {
+    width: 60px;
+  }
+}
+.RouteCard-Image {
+  width: 20px;
+  height: 20px;
+}
+@media (min-width: 1200px) {
+  .RouteCard-Image {
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (min-width: 1600px) {
+  .RouteCard-Image {
+    width: 40px;
+    height: 40px;
+  }
+}
+.RouteCard-IconWithTitle {
+  display: flex;
+  align-items: center;
+}
+.RouteCard-TextBlock {
+  align-self: center;
+}
+.RouteCard-Title {
+  margin: 0 0 0 5px;
+  font-weight: 700;
+  line-height: 20px;
+  max-height: 20px;
+  overflow: hidden;
+  font-size: 16px;
+}
+@media (min-width: 992px) {
+  .RouteCard-Title {
+    font-size: 20px;
+  }
+}
+.RouteCard-Description {
+  margin: 0 0 0 5px;
+  max-height: 40px;
+  overflow-y: hidden;
+}
+@media (min-width: 992px) {
+  .RouteCard-Description {
+    max-height: 60px;
+    line-height: 20px;
+  }
+}
+.RouteCard-Distance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+@media (min-width: 992px) {
+  .RouteCard-Distance {
+    font-size: 20px;
+  }
+}
+.RouteCard-IconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.RouteCard-Icon > svg {
+  height: 1.4em;
+  width: 1.4em;
+}
+
+.AddPath {
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-height: 90vh;
+}
+@media (min-width: 992px) {
+  .AddPath {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+.AddPath-Loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.AddPath-Divider {
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .AddPath-Divider {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media (min-width: 992px) {
+  .AddPath-AddPathForm {
+    margin-right: 10px;
+  }
+}
+.AddPath-MapContainer {
+  position: relative;
+}
+@media (min-width: 992px) {
+  .AddPath-MapContainer {
+    margin-left: 10px;
+  }
+}
+
+.MapContainer {
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #808080;
+}
+.MapContainer-Plate {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;
+}
+@media (min-width: 992px) {
+  .MapContainer {
+    padding-top: 20px;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+@media (min-width: 992px) {
+  .MapContainer {
+    height: 85vh;
+  }
+}
+
+.Plate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #dddddd;
+}
+.Plate-Icon {
+  width: 20px;
+  height: 20px;
+}
+
+.ShowMap {
+  width: 100%;
+  height: 60vh;
+}
+@media (min-width: 992px) {
+  .ShowMap {
+    height: 80vh;
+  }
+}
+.ShowMap_Small {
+  width: 100%;
+  height: 400px;
+}
+
+.AddPathForm {
+  min-height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.AddPathForm-Bottom {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+.AddPathForm-LimitData {
+  margin-top: -20px;
+  text-align: right;
+  color: #dddddd;
+}
+.AddPathForm-ButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.AddPathForm-Button {
+  width: 200px;
+  height: 60px !important;
+}
+.AddPathForm-RouteLength {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 1600px) {
+  .AddPathForm-RouteLength {
+    margin-bottom: 60px;
+  }
+}
+.AddPathForm-RouteLengthImage {
+  height: 40px;
+}
+.AddPathForm-RouteLengthText {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.Loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Firefox */
+* {
+  scrollbar-color: #808080 #ffffff;
+  scrollbar-width: thin;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #808080;
+  border-radius: 4px;
+  border: 2px solid #ffffff;
+}
+
+.scale {
+  transition: transform 0.3s linear;
+}
+.scale:hover {
+  transform: scale(1.04);
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,639 @@
+@import '../styles/vars';
+@import '../styles/mixins';
+
+//#region All project
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $main-font-family, $spare-font-family;
+  font-size: $regular-font-size;
+  color: $main-color;
+}
+//#endregion
+
+//#region Ovveride side libraries styles
+.ant-list-item {
+  border-bottom: none !important;
+}
+
+.ant-modal-content {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.ant-modal-header {
+  padding-left: $standard-gap / 2;
+  padding-right: $standard-gap / 2;
+
+  @include onWideTablet {
+    padding-left: $standard-gap;
+    padding-right: $standard-gap;
+  }
+}
+
+.ant-input-wrapper {
+  height: $standard-gap * 3;
+}
+
+.ant-input-affix-wrapper {
+  height: $standard-gap * 3;
+}
+
+.ant-input-search-button {
+  height: $standard-gap * 3 !important;
+  width: $standard-gap * 3 !important;
+}
+//#endregion
+
+//#region Components styles
+.App {
+  min-height: 100vh;
+
+  @include onWideTablet {
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  &-Header {
+    margin-bottom: $standard-gap / 2;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+
+    @include onWideTablet {
+      margin-bottom: $standard-gap / 2;
+    }
+  }
+}
+
+.Header {
+  padding: $standard-gap / 2 $standard-gap;
+  height: $header-height-mobile;
+  background-color: $contrast-color;
+
+  @include onTablet {
+    padding: $standard-gap / 2 $standard-gap * 2;
+    height: $header-height-tablet;
+  }
+
+  @include onDesktop {
+    padding: $standard-gap / 2 $standard-gap * 3;
+    height: $header-height;
+  }
+
+
+  &-Content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid $main-color;
+    height: 100%;
+
+    @include onLargeScreen {
+      max-width: 2000px;
+      margin: 0 auto;
+    }
+  }
+
+  &-Left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-Logo {
+    width: 30px;
+    height: 30px;
+    margin-right: $standard-gap / 2;
+
+    @include onTablet {
+      width: 34px;
+      height: 34px;
+    }
+
+    @include onDesktop {
+      margin-right: $standard-gap;
+      width: 46px;
+      height: 46px;
+    }
+  }
+
+  &-AppName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $large-font-size;
+
+    @include onDesktop {
+      font-size: $huge-font-size;
+    }
+  }
+
+  &-Button {
+    width: 100px;
+    height: 30px;
+    font-weight: $bold-font-weight;
+
+    @include onWideTablet {
+      width: 140px;
+      height: 40px;
+    }
+
+    @include onDesktop {
+      font-size: $intermediate-font-size;
+      width: 200px;
+      height: 50px;
+    }
+  }
+}
+
+.HomePage {
+  padding: 0 $standard-gap;
+
+  @include onTablet {
+    padding: $standard-gap / 2 $standard-gap * 2;
+  }
+
+  @include onDesktop {
+    padding: $standard-gap / 2 $standard-gap * 3;
+  }
+
+  &-Content {
+    @include onWideTablet {
+      position: relative;
+    }
+
+    @include onLargeScreen {
+      max-width: 2000px;
+      margin: 0 auto;
+    }
+  }
+
+  &-Divider {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-Item {
+    width: 100%;
+
+    @include onWideTablet {
+      height: calc(100vh - (#{$header-height-tablet + $standard-gap * 1.5}));
+      max-height: calc(100vh - (#{$header-height-tablet + $standard-gap * 1.5}));
+    }
+
+    @include onDesktop {
+      height: calc(100vh - (#{$header-height + $standard-gap * 2}));
+      max-height: calc(100vh - (#{$header-height + $standard-gap * 2}));
+    }
+  }
+
+  &-List {
+    @include onWideTablet {
+      padding-right: $standard-gap;
+    }
+  }
+
+  &-SearchInput {
+    margin-bottom: 0;
+    height: $standard-gap * 3;
+
+    @include onWideTablet {
+      padding-right: 8px;
+    }
+  }
+}
+
+.RoutesList {
+  height: 100%;
+
+  @include onWideTablet {
+    max-height: calc(100vh - (#{$header-height-tablet + $standard-gap * 4.5}));
+    overflow-y: scroll;
+  }
+
+  @include onDesktop {
+    max-height: calc(100vh - (#{$header-height + $standard-gap * 5.5}));
+  }
+}
+
+.RouteDetails {
+  @include onWideTablet {
+    max-height: calc(100vh - (#{$header-height-tablet + $standard-gap * 1.5}));
+    overflow-y: scroll;
+    padding-left: $standard-gap;
+    padding-right: $standard-gap;
+  }
+
+  @include onDesktop {
+    max-height: calc(100vh - (#{$header-height + $standard-gap * 2}));
+  }
+
+  &-Head {
+    margin-top: 0;
+    margin-bottom: $standard-gap / 2;
+    font-size: $intermediate-font-size;
+    font-weight: $bold-font-weight;
+    display: flex;
+    justify-content: space-between;
+    color: $dark-color;
+
+    @include onWideTablet {
+      margin: 0 0 $standard-gap;
+      font-size: $large-font-size;
+    }
+  }
+
+  &-Title {
+    margin: 0;
+  }
+
+  &-FullDescription {
+    margin-bottom: $standard-gap / 2;
+    text-align: justify;
+
+    @include onWideTablet {
+      margin-bottom: $standard-gap;
+      font-size: $intermediate-font-size;
+    }
+  }
+
+  &-LinksContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-bottom: $standard-gap;
+    min-height: 40px;
+
+    @include onWideTablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &-Link {
+    padding-right: 0;
+
+    @include onWideTablet {
+      font-size: $intermediate-font-size;
+    }
+  }
+}
+
+.DividerContainer {
+  display: none;
+
+  @include onWideTablet {
+    margin: 0 auto;
+    max-width: $standard-gap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.Divider {
+  &-Vertical {
+    background-color: $main-color;
+    height: 100%;
+    width: 2px;
+  }
+
+  &-Horizontal {
+    background-color: $main-color;
+    margin: 0;
+    height: 2px;
+  }
+}
+
+.EmptyRoute {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 50vh;
+
+  &-Image {
+    width: 160px !important;
+    height: 160px !important;
+    margin-bottom: $standard-gap;
+  }
+
+  &-Text {
+    font-size: $large-font-size;
+  }
+}
+
+.RouteCard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30px 1fr 70px 20px;
+  background-color: $pale-color;
+  height: $standard-gap * 4;
+  border-radius: $standard-border-radius;
+  padding: $standard-gap / 4;
+  color: $dark-color;
+
+  @include onWideMobile {
+    grid-template-columns: 40px 1fr 80px 20px;
+    height: $standard-gap * 5;
+    padding:  $standard-gap / 2;
+  }
+
+  @include onLaptop {
+    grid-template-columns: 50px 1fr 100px 30px;
+  }
+
+  @include onDesktop {
+    grid-template-columns: 60px 1fr 100px 30px;
+  }
+
+  &_Active {
+    background-color: $active-color;
+    color: $contrast-color;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-ImageBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $standard-gap;
+
+    @include onLaptop {
+      width: $standard-gap * 2;
+    }
+
+    @include onDesktop {
+      width: $standard-gap * 3;
+    }
+  }
+
+  &-Image {
+    width: $large-font-size;
+    height: $large-font-size;
+
+    @include onLaptop {
+      width: $large-font-size * 1.5;
+      height: $large-font-size * 1.5;
+    }
+
+    @include onDesktop {
+      width: $huge-font-size;
+      height: $huge-font-size;
+    }
+  }
+
+  &-IconWithTitle {
+    display: flex;
+    align-items: center;
+  }
+
+  &-TextBlock {
+    align-self: center;
+  }
+
+  &-Title {
+    margin: 0 0 0 $standard-gap / 4;
+    font-weight: $bold-font-weight;
+    line-height: $standard-gap;
+    max-height: $standard-gap;
+    overflow: hidden;
+    font-size: $intermediate-font-size;
+
+    @include onWideTablet {
+      font-size: $large-font-size;
+    }
+  }
+
+  &-Description {
+    margin: 0 0 0 $standard-gap / 4;
+    max-height: $standard-gap * 2;
+    overflow-y: hidden;
+
+    @include onWideTablet {
+      max-height: $standard-gap * 3;
+      line-height: $standard-gap;
+    }
+  }
+
+  &-Distance {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: $bold-font-weight;
+    font-size: $intermediate-font-size;
+
+    @include onWideTablet {
+      font-size: $large-font-size;
+    }
+  }
+
+  &-IconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-Icon>svg {
+    height: 1.4em;
+    width: 1.4em;
+  }
+}
+
+.AddPath {
+  position: relative;
+  padding-left: $standard-gap / 2;
+  padding-right: $standard-gap / 2;
+  min-height: 90vh;
+
+  @include onWideTablet {
+    padding-left: $standard-gap;
+    padding-right: $standard-gap;
+  }
+
+  &-Loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  &-Divider {
+    width: 100%;
+
+    @include onWideTablet {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &-AddPathForm {
+    @include onWideTablet {
+      margin-right: $standard-gap / 2;
+    }
+  }
+
+  &-MapContainer {
+    position: relative;
+
+    @include onWideTablet {
+      margin-left: $standard-gap / 2;
+    }
+  }
+}
+
+.MapContainer {
+  position: relative;
+  padding-top: $standard-gap / 2;
+  padding-bottom: $standard-gap;
+  border-bottom: 2px solid $main-color;
+
+  &-Plate {
+    position: absolute;
+    top: $standard-gap * 4;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+  }
+
+  @include onWideTablet {
+    padding-top: $standard-gap;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  @include onWideTablet {
+    height: 85vh;
+  }
+}
+
+.Plate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 40px;
+  background-color: $contrast-color;
+  border-radius: $standard-border-radius;
+  border: 1px solid $pale-color;
+
+  &-Icon {
+    width: $standard-gap;
+    height: $standard-gap;
+  }
+}
+
+.ShowMap {
+  width: 100%;
+  height: 60vh;
+
+  @include onWideTablet {
+    height: 80vh;
+  }
+
+  &_Small {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+.AddPathForm {
+  min-height: 100%;
+  padding-top: $standard-gap;
+  padding-bottom: $standard-gap;
+  display: flex;
+  flex-direction: column;
+
+  &-Bottom {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+
+  &-LimitData {
+    margin-top: -20px;
+    text-align: right;
+    color: $pale-color;
+  }
+
+  &-ButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-Button {
+    width: $standard-gap * 10;
+    height: $standard-gap * 3 !important;
+  }
+
+  &-RouteLength {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include onDesktop {
+      margin-bottom: $standard-gap * 3;
+    }
+  }
+
+  &-RouteLengthImage {
+    height: $standard-gap * 2;
+  }
+
+  &-RouteLengthText {
+    margin-left: $standard-gap / 2;
+    font-size: $large-font-size;
+  }
+}
+
+.Loader {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//#endregion
+
+//#region Scrollbar
+/* Firefox */
+* {
+  scrollbar-color: $main-color #ffffff;
+  scrollbar-width: thin;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $main-color;
+  border-radius: 4px;
+  border: 2px solid #ffffff;
+}
+
+.scale {
+  transition: transform 0.3s linear;
+
+  &:hover {
+    transform: scale(1.04);
+  }
+}
+//#endregion
